@@ -45,7 +45,7 @@ defmodule Teamwork.Mixfile do
   defp deps do
     [
       {:bamboo, "~> 0.8"},
-      {:cowboy, "~> 1.1"}
+      {:cowboy, "~> 1.1"},
       {:doorman, "~> 0.5"},
       {:ex_machina, "~> 2.0.0"},
       {:ex_spec, "~> 2.0.1", only: :test},
@@ -53,7 +53,7 @@ defmodule Teamwork.Mixfile do
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0.0"},
       {:icalendar, "~> 0.2.0"},
-      {:mailgun, "~> 0.2.1"},
+      {:mailgun, "~> 0.1.2"},
       {:number, "~> 0.5.0"},
       {:phoenix, "~> 1.2.1"},
       {:phoenix_ecto, "~> 3.0"},
@@ -61,7 +61,7 @@ defmodule Teamwork.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:phoenix_pubsub, "~> 1.0"},
       {:postgrex, ">= 0.0.0"},
-      {:poison, "~> 3.0"},
+      {:poison, "~> 3.0", override: true},
       {:timex, "~> 3.1.0"},
       {:timex_ecto, "3.1.0"},
     ]
