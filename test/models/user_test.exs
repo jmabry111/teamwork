@@ -3,7 +3,7 @@ defmodule Teamwork.UserTest do
 
   alias Teamwork.User
 
-  @valid_attrs %{email: "some content", hashed_password: "some content"}
+  @valid_attrs %{email: "some content", password: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

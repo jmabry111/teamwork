@@ -51,7 +51,7 @@ defmodule Teamwork.Mixfile do
       {:ex_spec, "~> 2.0.1", only: :test},
       {:formulator, "~> 0.0.6"},
       {:gettext, "~> 0.11"},
-      {:hound, "~> 1.0.0"},
+      {:hound, "~> 1.0.3"},
       {:icalendar, "~> 0.2.0"},
       {:mailgun, "~> 0.1.2"},
       {:number, "~> 0.5.0"},
