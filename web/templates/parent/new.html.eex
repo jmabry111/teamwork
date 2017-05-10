@@ -1,0 +1,17 @@
+<h2>Sign up!</h2>
+
+<%= render(
+  "form.html",
+  changeset: @changeset,
+  action: parent_path(@conn, :create)
+) %>
+
+<hr />
+
+<p>Already signed up and want to add more players?</p>
+
+<p>Just enter your email here, and we'll email you a link that will allow you to register more players</p>
+<%= form_for @conn, tokenized_parent_email_path(@conn, :create), [as: :parent], fn form -> %>
+  <%= input form, :email %>
+  <%= submit "Send email" %>
+<% end %>

@@ -1,0 +1,8 @@
+<h2>Players for <%= @parent.name %></h2>
+
+<%= for player <- @players do %>
+  <li><%= link player.name, to: player_path(@conn, :show, player) %></li>
+<% end %>
+
+<hr />
+<%= link "Add another player", to: parent_player_path(@conn, :new, @parent) %>

@@ -1,0 +1,38 @@
+<%= form_for @changeset, @action, fn form -> %>
+    <%= render Teamwork.FormView, "_form_errors.html", changeset: @changeset, form: form %>
+
+    <p>First we need a bit of information about you!</p>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <%= input form, :name, class: "form-control"%>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-5">
+        <%= input form, :email, class: "form-control", placeholder: "email@email.com" %>
+      </div>
+      <div class="col-sm-4">
+        <%= input form, :phone, class: "form-control", placeholder: "1231231234" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <%= input form, :street, class: "form-control", placeholder: "123 Main St." %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-4">
+        <%= input form, :city, class: "form-control", placeholder: "Anywhere" %>
+      </div>
+      <div class="col-sm-2">
+        <%= input form, :state, class: "form-control", placeholder: "VA" %>
+      </div>
+      <div class="col-sm-3">
+        <%= input form, :zip, class: "form-control", placeholder: "55555" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>

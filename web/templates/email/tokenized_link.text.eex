@@ -1,0 +1,4 @@
+Hello, <%= @parent.name %>!
+
+Please follow the following link to add another participant:
+<%= parent_url(Teamwork.Endpoint, :show, @parent, token: @token) %>

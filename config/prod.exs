@@ -15,7 +15,7 @@ config :teamwork, Teamwork.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
-  #config :teamwork, Teamwork.Mailer,
-  #  adapter: Bamboo.MailgunAdapter,
-  #  domain: System.get_env("MAILGUN_DOMAIN"),
-  #  api_key: System.get_env("MAILGUN_API_KEY")
+  config :teamwork, Teamwork.Mailer,
+    adapter: Bamboo.MailgunAdapter,
+    domain: System.get_env("MAILGUN_DOMAIN"),
+    api_key: System.get_env("MAILGUN_API_KEY")

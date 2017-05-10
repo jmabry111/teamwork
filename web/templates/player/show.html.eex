@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h2>Registration Information</h2>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <address>
+        <strong><%= @player.name %></strong><br />
+        <%= @player.parent.street %><br />
+        <%= @player.parent.city %>, <%= @player.parent.state %> <%= @player.parent.zip %><br />
+      </address>
+    </div>
+    <div class="col-sm-6">
+      <address>
+        <%= number_to_phone(@player.parent.phone, area_code: true) %><br />
+        <%= @player.parent.email %><br />
+        <%= @player.gender %> |  <%= @player.age %> years old
+      </address>
+    </div>
+  </div>
+
+  <div class="noprint">
+    <%= link(
+      gettext("Register Another Participant"),
+      to: parent_player_path(@conn, :new, @player.parent),
+      class: "btn btn-primary",
+    ) %>
+
+    <%= link(
+      gettext("View All Participants I've Registered"),
+      to: parent_path(@conn, :show, @player.parent),
+      class: "btn btn-primary",
+    ) %>
+  </div>
+</div>

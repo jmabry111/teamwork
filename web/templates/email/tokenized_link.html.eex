@@ -1,0 +1,4 @@
+<h1>Hello, <%= @parent.name %>!</h1>
+
+<p>Please follow the following link to add another participant:</p>
+<%= link gettext("Update/Change Your Registration"), to: parent_url(Teamwork.Endpoint, :show, @parent, token: @token) %>

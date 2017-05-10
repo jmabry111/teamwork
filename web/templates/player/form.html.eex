@@ -1,0 +1,53 @@
+<%= form_for @changeset, @action, fn f -> %>
+    <%= render Teamwork.FormView, "_form_errors.html", changeset: @changeset, form: f %>
+
+    <div class="form-group row">
+      <div class="col-sm-8 offset-sm-2">
+        <%= input f, :name, class: "form-control", label: false, placeholder: "Player name" %>
+      </div>
+    </div>
+
+    <%= date_select f,
+      :birthdate,
+      year: [options: 1950..Ecto.Date.utc.year],
+      default: {1990,1,1}, builder: fn builder-> %>
+      <div class="form-group row">
+        <div class="col-sm-8">
+          <%= label f, :birthdate, "Birthday" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-3">
+          <%= builder.(:month, [class: "form-control"]) %>
+        </div>
+        <div class="col-sm-2">
+          <%= builder.(:day, [class: "form-control"]) %>
+        </div>
+        <div class="col-sm-3">
+          <%= builder.(:year, [class: "form-control"]) %>
+        </div>
+      </div>
+    <% end %>
+    <div class="form-group row">
+      <div class="col-sm-8">
+        <%= error_tag(f, :birthdate) %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-8">
+        <%= select(f, :school, Teamwork.Player.schools, prompt: "Current School", class: "form-control") %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-4">
+        <%= input f, :grade_level, class: "form-control", label: false, placeholder: "Current Grade Level" %>
+      </div>
+      <div class="col-sm-4">
+        <%= select(f, :gender, ["Male", "Female"], class: "form-control", prompt: "Gender") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>

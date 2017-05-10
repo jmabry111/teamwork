@@ -39,3 +39,5 @@ config :teamwork, Teamwork.Repo,
   database: "teamwork_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :teamwork, Teamwork.Mailer, adapter: Bamboo.LocalAdapter
