@@ -1,7 +1,9 @@
 defmodule Teamwork.Plug.SessionBackdoor do
   alias Teamwork.Repo
   alias Teamwork.User
+  alias Teamwork.Parent
   import Doorman.Login.Session
+  import Teamwork.ParentSession, only: [login_parent: 2]
 
   def init(default), do: default
 
@@ -11,6 +13,10 @@ defmodule Teamwork.Plug.SessionBackdoor do
         user = Repo.get!(User, id)
         conn
         |> login(user)
+      %{"as_parent" => id} ->
+        parent = Repo.get!(Parent, id)
+        conn
+        |> login_parent(parent)
       _ -> conn
     end
   end

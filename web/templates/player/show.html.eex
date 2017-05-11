@@ -25,13 +25,13 @@
 
   <div class="noprint">
     <%= link(
-      gettext("Register Another Participant"),
+      gettext("Register Another Player"),
       to: parent_player_path(@conn, :new, @player.parent),
       class: "btn btn-primary",
     ) %>
 
     <%= link(
-      gettext("View All Participants I've Registered"),
+      gettext("View All Players I've Registered"),
       to: parent_path(@conn, :show, @player.parent),
       class: "btn btn-primary",
     ) %>

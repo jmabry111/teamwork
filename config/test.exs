@@ -18,4 +18,4 @@ config :teamwork, Teamwork.Repo,
 
 config :hound, driver: "phantomjs", port: 8910
 
-#config :teamwork, Teamwork.Mailer, adapter: Bamboo.TestAdapter
+config :teamwork, Teamwork.Mailer, adapter: Bamboo.TestAdapter
